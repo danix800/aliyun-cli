@@ -183,11 +183,11 @@ func printParameters(w io.Writer, params []meta.Parameter, prefix string, detail
 			if len(param.SubParameters) > 0 {
 				printParameters(w, param.SubParameters, prefix+param.Name+".n.", detail)
 			} else {
-				fmt.Fprintf(w, "  --%s%s.n\t%s\t%s\n\n", cli.Colorized(cli.BGreen, prefix), cli.Colorized(cli.BGreen, param.Name), param.Type, required(param.Required))
+				fmt.Fprintf(w, "  --%s%s.n\t%s\t%s\n\n", cli.Colorized(cli.Green, prefix), cli.Colorized(cli.Green, param.Name), param.Type, required(param.Required))
 				displayDescription(w, getDescription(detail, param.Name))
 			}
 		} else {
-			fmt.Fprintf(w, "  --%s%s\t%s\t%s\n\n", cli.Colorized(cli.BGreen, prefix), cli.Colorized(cli.BGreen, param.Name), param.Type, required(param.Required))
+			fmt.Fprintf(w, "  --%s%s\t%s\t%s\n\n", cli.Colorized(cli.Green, prefix), cli.Colorized(cli.Green, param.Name), param.Type, required(param.Required))
 			displayDescription(w, getDescription(detail, param.Name))
 		}
 	}
