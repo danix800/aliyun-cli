@@ -71,7 +71,7 @@ func (a *RpcInvoker) Prepare(ctx *cli.Context) error {
 
 		if param.Position == "Query" {
 			request.QueryParams[f.Name], _ = f.GetValue()
-		} else if param.Position == "Body" {
+		} else if param.Position == "Body" || param.Position == "Formdata" {
 			request.FormParams[f.Name], _ = f.GetValue()
 		} else if param.Position == "Domain" {
 			continue
